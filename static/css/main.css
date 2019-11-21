@@ -4,41 +4,29 @@ h1 {
 
 body{
   background-image: url("/static/img/bg.jpg");
+  font-size: 20px;
+	font-family: comic;
+	color: #333;
 }
 
-input[type=file], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+img{
+  margin-right: 30px
 }
 
-input[type=submit] {
-  width: 100%;
-  background-color: #002395;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+img.s{
+  position:absolute;
+  left:450px;
+  top:300px
 }
 
-input[type=submit]:hover {
-  background-color: #72bcd4;
-}
-
-/* Menu */
 nav ul {
   list-style-type: none;
+  width:auto;
   margin: 0;
   padding: 0;
   overflow: hidden;
   border: 1px solid #e7e7e7;
-  background-color: #f3f3f324;
+  background-color: #003399;
 }
 
 nav ul li {
@@ -47,30 +35,45 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  color: #666;
-  text-align: center;
+  color: #fff;
+  text-align: left;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 nav ul li a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: #0000ff;
 }
 
-/* Tables */
-td, th {
-  border: 1px solid #ddd;
-  padding: 8px;
+
+
+.left
+{
+  float: left;
 }
 
-tr:nth-child(even){background-color: #f2f2f2;}
+.right
+{
+  float: right;
+}
 
-tr:hover {background-color: #ddd;}
-
-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #002395;
-  color: white;
+.question{
+	font-weight: 600;
+}
+.answers {
+    margin-bottom: 30px;
+}
+#submit{
+	font-family: comic;
+	font-size: 20px;
+	background-color: #003399;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 10px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+#submit:hover{
+	background-color: #0000ff;
 }

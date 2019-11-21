@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Anaksymander z Miletu</h2>
+<h3>(609-547 p.n.e.)</h3>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Anaximander.jpg/128px-Anaximander.jpg" alt = "Anaksymander z Miletu" align="left" width="320" height="420">
+
+<h4>Notka biograficzna:</h4>
+<p>Prawdopodobnie był uczniem Talesa i nauczycielem Anaksymenesa. Uważa się go
+  za autora pierwszego w historii ludzkości dzieła filozoficznego,
+  znanego pod tytułem  „O naturze”. Przypisuje mu się też wynalezienie zegara
+  słonecznego oraz modelu sfer planetarnych.</p>
+
+<h4>Pogląd na naturę Arche:</h4>
+<p>Bezkres (apeiron), czyli coś nieskończonego przestrzennie i wielkościowo,
+  coś czego nie można określić jakościowo.</p>
+
+<h4>Uzasadnienie:</h4>
+<p>Swoją tezę Anaksymander opierał na następującym rozumowaniu:
+  Wszystko albo jest zasadą, albo pochodzi od zasady. Jednocześnie,
+  nie istnieje zasada nieskończoności, bo nieskończoność jest niedeterminowalna,
+  a zasada determinuje to, czego jest zasadą. Jeżeli nieskończoność nie ma zasady,
+  to z konieczności sama musi zasadę stanowić.</p>
+
+<h4>Ciekawostki:</h4>
+<p>Według jego teorii Ziemia jest powierzchnią walca zakrzywioną w kierunku
+  północno-południowym.</p>
+
+<div class='left'><a href="{% url 'tales' %}">Poprzedni filozof</a>  </div>
+<div class='right'><a href="{% url 'anaksymenes' %}">Następny filozof</a>  </div>
+{% endblock %}

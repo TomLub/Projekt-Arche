@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Heraklit z Efezu</h2>
+<h3>(540 - 480 p.n.e.)</h3>
+<img src = "https://www.edukator.pl/customers/edukator/web/galeria/data/upload/1330445038_422.jpg" alt = "Heraklit z Efezu" align="left" width="400" height="320">
+
+<h4>Notka biograficzna:</h4>
+<p>Uważał siebie za samouka i mędrca. Przez innych był określany mianem
+  „Płaczącego Filozofa”, ze względu na samotny tryb życia oraz zawiły sposób
+  formułowania myśli. Swoje poglądy przedstawiał za pomocą alegorii i aforyzmów,
+  tak aby mogli je zrozumieć jedynie nieliczni wtajemniczeni.
+  Uważał, że wszystko płynie.</p>
+
+<h4>Pogląd na naturę Arche:</h4>
+<p>Ogień</p>
+
+<h4>Uzasadnienie:</h4>
+<p>Wybrał ogień, ponieważ żyje on śmiercią tego co spala, dynamika tego żywiołu
+  odzwierciedla obraz świata – jego ruch i dynamizm. Uważał on, że wszechświat
+  nie został stworzony, lecz zawsze był żywym ogniem (procesem),
+  który się zapala i gaśnie.</p>
+
+
+<div class='left'><a href="{% url 'anaksymenes' %}">Poprzedni filozof</a>  </div>
+<div class='right'><a href="{% url 'pitagoras' %}">Następny filozof</a>  </div>
+{% endblock %}

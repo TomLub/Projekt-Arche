@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Anaksagoras z Kladzomen</h2>
+<h3>(500-4278p.n.e.)</h3>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Anaxagoras.png/240px-Anaxagoras.png" alt = "Anaksagoras z Kladzomen" align="left" width="400" height="400">
+
+<h4>Notka biograficzna:</h4>
+<p>Grecki filozof nauczający w Atenach pod opieką Peryklesa. Próbował w swojej nauce
+  znaleźć kompromis między poglądami Heraklita i eleatów. Jako pierwszy podał poprawne
+  wyjaśnienie zaćmienia Słońca i Księżyca oraz faz Księżyca. Na podstawie obserwacji
+  meteorytów spadających na Ziemię, które są bryłkami czerwonego rozgrzanego żelaza,
+  wnioskował że Słońce i inne gwiazdy musiały być również właśnie takimi kulami.</p>
+
+<h4>Pogląd na naturę Arche:</h4>
+<p>Zasada jest rozsądkiem, myśleniem zawierającym element duchowy</p>
+<p>„We wszystkim jest cząstka wszystkiego.”</p>
+
+<h4>Uzasadnienie:</h4>
+<p>Anaksagoras zradykalizował myśl Empedoklesa wskazując na istnienie nieskończenie wielu pierwiastków,
+  które jednak nie mogły wytworzyć rzeczy z własnej mocy, początkowo znajdując się w bezwładnej mieszaninie,
+  z której pod wpływem ruchu spowodowanego przez znajdujący się poza światem umysł powstały rzeczy.
+  Zatem to umysł czy też duch jest zasadą, z kolei pierwiastki jedynie budulcem.</p>
+
+<div class='left'><a href="{% url 'empedokles' %}">Poprzedni filozof</a>  </div>
+<div class='right'><a href="{% url 'demokryt' %}">Następny filozof</a>  </div>
+{% endblock %}

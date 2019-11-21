@@ -1,7 +1,153 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Quiz</h1>
+<h3>Oto quiz w którym możesz sprawdzić swoją wiedzę:</h3>
+<h5>Zaznacz odpowiedzi i kliknij "zatwierdź"</h5>
 
-    <p>Sprawdź swoją wiedzę</p>
+<div id="quiz"></div>
+<button id="submit">Zatwierdź</button>
+<div id="results"></div>
+
+<script>
+  var myQuestions = [
+      {
+          question: "Który z tych filozofów uważał powietrze za Arche?",
+          answers: {
+              a: 'Heraklit',
+              b: 'Anaksymenes',
+              c: 'Tales',
+              d: 'Empedokles'
+          },
+          correctAnswer: 'b'
+      },
+      {
+          question: "Co o arche powiedziałby Anaksagoras?",
+          answers: {
+              a: 'Arche to atomy',
+              b: 'Arche nie jest bytem',
+              c: 'Jest myśleniem zawierającym element duchowy',
+              d: 'Jest bezkresem'
+          },
+          correctAnswer: 'c'
+      },
+      {
+          question: "Czym, według Empedoklesa Arche na pewno nie było?",
+          answers: {
+              a: 'Ziemią',
+              b: 'Ogniem',
+              c: 'Bezkresem',
+              d: 'Powietrzem'
+          },
+          correctAnswer: 'c'
+      },
+      {
+          question: "Który z filozofów uważał atomy za Arche?",
+          answers: {
+              a: 'Demokryt',
+              b: 'Sokrates',
+              c: 'Pitagoras',
+              d: 'Anaksymander'
+          },
+          correctAnswer: 'a'
+      },
+      {
+          question: "Który z filozofów nie podał żadnego żywiołu jako propozycji arche?",
+          answers: {
+              a: 'Tales',
+              b: 'Heraklit',
+              c: 'Empedokles',
+              d: 'Parmenides'
+          },
+          correctAnswer: 'd'
+      },
+      {
+          question: "Czym, według Pitagorasa było Arche?",
+          answers: {
+              a: 'Liczbą',
+              b: 'Trójkątem',
+              c: 'Czterema żywiołami',
+              d: 'Przyrodą'
+          },
+          correctAnswer: 'a'
+      },
+      {
+          question: "Co za arche uważał Tales z Miletu?",
+          answers: {
+              a: 'Powietrze',
+              b: 'Wodę',
+              c: 'Ogień',
+              d: 'Wino'
+          },
+          correctAnswer: 'b'
+      },
+      {
+          question: "Kto uważał, że arche to Apeiron?",
+          answers: {
+              a: 'Tales',
+              b: 'Uczeń Talesa',
+              c: 'Anaksymenes',
+              d: 'Uczeń Anaksymandra'
+          },
+          correctAnswer: 'b'
+      },
+      {
+          question: "Według kogo Arche było ogniem?",
+          answers: {
+              a: 'Pitagorasa',
+              b: 'Hefajstosa',
+              c: 'Sokratesa',
+              d: 'Heraklita'
+          },
+          correctAnswer: 'd'
+      }
+  ];
+
+  var quizContainer = document.getElementById('quiz');
+  var resultsContainer = document.getElementById('results');
+  var submitButton = document.getElementById('submit');
+  generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+  function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+      function showQuestions(questions, quizContainer){
+          var output = [];
+          var answers;
+          for(var i=0; i<questions.length; i++){
+              answers = [];
+              for(letter in questions[i].answers){
+                  answers.push(
+                      '<label>'
+                          + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                          + letter + ': '
+                          + questions[i].answers[letter]
+                      + '</label>'
+                  );
+              }
+              output.push(
+                  '<div class="question">' + questions[i].question + '</div>'
+                  + '<div class="answers">' + answers.join('') + '</div>'
+              );
+          }
+          quizContainer.innerHTML = output.join('');
+      }
+      function showResults(questions, quizContainer, resultsContainer){
+          var answerContainers = quizContainer.querySelectorAll('.answers');
+          var userAnswer = '';
+          var numCorrect = 0;
+          for(var i=0; i<questions.length; i++){
+              userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+              if(userAnswer===questions[i].correctAnswer){
+                  numCorrect++;
+                  answerContainers[i].style.color = 'blue';
+              }
+              else{
+                  answerContainers[i].style.color = 'red';
+              }
+          }
+          resultsContainer.innerHTML = numCorrect + ' z ' + questions.length+' dobrych odpowiedzi ';
+      }
+      showQuestions(questions, quizContainer);
+      submitButton.onclick = function(){
+          showResults(questions, quizContainer, resultsContainer);
+      }
+  }
+</script>
 {% endblock %}

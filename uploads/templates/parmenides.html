@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Parmenides z Elei</h2>
+<h3>(540 - 470  p.n.e.)</h3>
+<img src = "https://antycznahellada.files.wordpress.com/2013/11/parmenides-filozofia-grecja-antyczna-hellada-staroc5bcytna.jpg" alt = "Parmenides z Elei" align="left" width="300" height="400">
+
+<h4>Notka biograficzna:</h4>
+<p>Grecki filozof, twórca szkoły elejskiej. Był pierwszym filozofem,
+  który analizował pojęcie bytu tak systematycznie oraz szczegółowo.
+  Utożsamiał go z prawdą i uważał, że jest wieczny, nie ma początku ani końca,
+  jest nieruchomy i niezmienny, niepodzielny, stały i jeden.
+  Jest on twórcą podstaw myślenia logicznego.</p>
+
+<h4>Pogląd na naturę Arche:</h4>
+<p>Zjawiska nie są prawdziwym bytem</p>
+
+<h4>Uzasadnienie:</h4>
+<p>Byt jest poznawany tylko rozumowo;
+  w przeciwieństwie do zjawisk jest on niepowstały, nieginący,
+  niezmienny i absolutnie nieruchomy.</p>
+
+
+<div class='left'><a href="{% url 'pitagoras' %}">Poprzedni filozof</a>  </div>
+<div class='right'><a href="{% url 'empedokles' %}">Następny filozof</a>  </div>
+{% endblock %}

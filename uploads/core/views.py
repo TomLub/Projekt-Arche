@@ -24,3 +24,39 @@ def quiz(request):
 def nauka(request):
     print('Nauka')
     return render(request, 'nauka.html')
+
+def tales(request):
+    print('Tales')
+    return render(request,'tales.html')
+
+def anaksymander(request):
+    print('Anaksymander')
+    return render(request,'anaksymander.html')
+
+def anaksymenes(request):
+    print('Anaksymenes')
+    return render(request,'anaksymenes.html')
+
+def heraklit(request):
+    print('Heraklit')
+    return render(request,'heraklit.html')
+
+def pitagoras(request):
+    print('Pitagoras')
+    return render(request,'pitagoras.html')
+
+def parmenides(request):
+    print('parmenides')
+    return render(request,'parmenides.html')
+
+def empedokles(request):
+    print('empedokles')
+    return render(request,'empedokles.html')
+
+def anaksagoras(request):
+    print('anaksagoras')
+    return render(request,'anaksagoras.html')
+
+def demokryt(request):
+    print('Demokryt')
+    return render(request,'demokryt.html')
