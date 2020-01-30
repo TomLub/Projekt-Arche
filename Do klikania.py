@@ -100,7 +100,7 @@ while True:
                 sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN and ti==False:
             while ti2==False:
-                pygame.time.set_timer(WAIT, 2000)
+                pygame.time.set_timer(WAIT, 5000)
                 ti2=True
             column=column+1
             if column>3:column=1
