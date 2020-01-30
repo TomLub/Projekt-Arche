@@ -17,12 +17,16 @@ def is_full(board):
 def get_winner(board):
     if ((board[1][1] == board[2][2] and board[2][2] == board[3][3]) \
             or (board[1][3] == board[2][2] and board[2][2] == board[3][1])) and board[2][2] is not None:
-        return board[2][2]
+        win=board[2][2]
+        return win
     for i in range(1,4):
         if board[i][1] == board[i][2] and board[i][2] == board[i][3] and board[i][1] is not None:
-            return board[i][1]
+            win= board[i][1]
+            return win
         if board[1][i] == board[2][i] and board[2][i] == board[3][i] and board[1][i] is not None:
-            return board[1][i]
+            win=board[1][i]
+            return win
+
     return None
 def draw_lines():
     pygame.draw.line(screen, lineColor, (200,100),(200, 400), lineSize)
@@ -62,7 +66,6 @@ def cleancolumns(board):
         board[i][4] = None
     return board
 screenSize = 500
-margin = 100
 lineSize = 10
 column=0
 row=0
@@ -100,7 +103,7 @@ while True:
                 sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN and ti==False:
             while ti2==False:
-                pygame.time.set_timer(WAIT, 5000)
+                pygame.time.set_timer(WAIT, 4000)
                 ti2=True
             column=column+1
             if column>3:column=1
@@ -146,14 +149,16 @@ while True:
                     text_surface = myFont.render(str(winner) + " has won!", False, lineColor)
                     screen.blit(text_surface, (50,screenSize // 2 - screenSize // 10))
                     canPlay = False
-                    pygame.time.set_timer(WAIT, 0)
+
                 else:
                     if is_full(board):
                         myFont = pygame.font.SysFont('Calibri', screenSize // 5)
                         text_surface = myFont.render("Draw!", False, lineColor)
-                        screen.blit(text_surface, (5,screenSize // 10, screenSize // 2 - screenSize // 10))
+                        screen.blit(text_surface, (screenSize // 10, screenSize // 2 - screenSize // 10))
+                        canPlay = False
 
     if canPlay==False:
+        pygame.time.set_timer(WAIT, 0)
         board = [[None,None,None, None, None], [None,None,None, None, None], [None,None,None, None, None],[None,None,None, None, None],[None,None,None, None, None]]
         screen.fill(backgroundColor)
         draw_lines()
